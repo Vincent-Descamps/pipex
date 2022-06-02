@@ -6,7 +6,7 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 10:53:08 by vdescamp          #+#    #+#              #
-#    Updated: 2022/05/31 11:06:39 by vdescamp         ###   ########.fr        #
+#    Updated: 2022/06/02 11:23:50 by vdescamp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,15 @@ SRCS = retest.c \
 		../libft/ft_strnstr.c \
 		../libft/ft_substr.c \
 		../libft/ft_strdup.c \
-		../ft_printf/ft_printf.c \
-		../ft_printf/ft_check.c \
-		../ft_printf/ft_str_s.c \
-		../ft_printf/ft_char_c.c \
-		../ft_printf/ft_hex_x.c \
-		../ft_printf/ft_int_i.c \
-		../ft_printf/ft_percent.c \
-		../ft_printf/ft_ptr_p.c \
-		../ft_printf/ft_unsint_u.c \
+		../printf/ft_printf.c \
+		../printf/ft_check.c \
+		../printf/ft_varstr_s.c \
+		../printf/ft_varchar_c.c \
+		../printf/ft_varhex_x.c \
+		../printf/ft_varint_i.c \
+		../printf/ft_varpercent.c \
+		../printf/ft_varptr_p.c \
+		../printf/ft_varunsint_u.c \
 
 OBJS = ${SRCS:.c=.o}
 
