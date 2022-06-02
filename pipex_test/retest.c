@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:01:26 by vdescamp          #+#    #+#             */
-/*   Updated: 2022/06/02 13:06:04 by vdescamp         ###   ########.fr       */
+/*   Updated: 2022/06/02 13:25:33 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*get_path(char *cmd, char **envp)
 		free(cmd_path);
 		i++;
 	}
-	return ("error\n");
+	return ("**error can't find path...**\n");
 }
 
 int	main(int argc, char **argv, char **envp)

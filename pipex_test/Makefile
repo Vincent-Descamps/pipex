@@ -6,13 +6,13 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 10:53:08 by vdescamp          #+#    #+#              #
-#    Updated: 2022/06/02 11:23:50 by vdescamp         ###   ########.fr        #
+#    Updated: 2022/06/02 13:29:20 by vdescamp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex.a
 CC = gcc
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 SRCS = retest.c \
