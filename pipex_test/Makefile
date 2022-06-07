@@ -6,11 +6,11 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 10:53:08 by vdescamp          #+#    #+#              #
-#    Updated: 2022/06/02 13:29:20 by vdescamp         ###   ########.fr        #
+#    Updated: 2022/06/07 10:48:44 by vdescamp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = pipex.a
+NAME = pipex
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
