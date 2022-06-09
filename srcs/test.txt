@@ -1,0 +1,4 @@
+Salut à toi.
+Je suis un fichier test.
+Fait selon tes besoins...
+Cheers.

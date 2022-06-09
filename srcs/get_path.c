@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 12:25:02 by vdescamp          #+#    #+#             */
-/*   Updated: 2022/06/07 12:43:56 by vdescamp         ###   ########.fr       */
+/*   Updated: 2022/06/09 11:33:41 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ char	*get_path(char *cmd, char **envp)
 		{
 			len = ft_strlen(env_path);
 			env_path = ft_substr(env_path, 5, len - 4);
-			ft_printf("===>%s\n", env_path);
 			break ;
 		}
 		i++;
