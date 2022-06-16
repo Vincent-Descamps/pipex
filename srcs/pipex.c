@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:20:48 by vdescamp          #+#    #+#             */
-/*   Updated: 2022/06/16 14:16:21 by vdescamp         ###   ########.fr       */
+/*   Updated: 2022/06/16 17:56:27 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ void	process_1(char **argv, char **envp, int ends)
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
-	{
-		printf("error");
-		exit (1);
-	}
+		ft_error("**Error in output file");
 	dup2(fd, STDIN_FILENO);
 	close(fd);
 	options = ft_split(argv[2], ' ');
@@ -32,7 +29,7 @@ void	process_1(char **argv, char **envp, int ends)
 	path = get_path(cmd, envp);
 	dup2(ends, STDOUT_FILENO);
 	execve(path, options, envp);
-	printf("error in first process\n");
+	ft_error("Error in first process");
 }
 
 void	process_2(char **argv, char **envp, int ends)
@@ -42,12 +39,9 @@ void	process_2(char **argv, char **envp, int ends)
 	char	*cmd;
 	char	**options;
 
-	fd = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 0000644);
+	fd = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 00777);
 	if (fd < 0)
-	{
-		printf("error");
-		exit (1);
-	}
+		ft_error("**Error in input file");
 	dup2(fd, STDOUT_FILENO);
 	close(fd);
 	options = ft_split(argv[3], ' ');
@@ -55,7 +49,7 @@ void	process_2(char **argv, char **envp, int ends)
 	path = get_path(cmd, envp);
 	dup2(ends, STDIN_FILENO);
 	execve(path, options, envp);
-	printf("error in second process\n");
+	ft_error("Error in second process");
 }
 
 int	pipex(char **argv, char **envp)
@@ -68,13 +62,13 @@ int	pipex(char **argv, char **envp)
 		return (1);
 	pid1 = fork();
 	if (pid1 == -1)
-		return (1);
+		ft_error("**Error in first process**");
 	if (pid1 == 0)
 		process_1(argv, envp, ends[1]);
 	close(ends[1]);
 	pid2 = fork();
 	if (pid2 == -1)
-		return (1);
+		ft_error("**Error in first process**");
 	if (pid2 == 0)
 	{
 		process_2(argv, envp, ends[0]);
