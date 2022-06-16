@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 12:25:02 by vdescamp          #+#    #+#             */
-/*   Updated: 2022/06/09 11:33:41 by vdescamp         ###   ########.fr       */
+/*   Updated: 2022/06/16 14:02:39 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*get_cmd_path(char **paths, char	*cmd)
 	while (paths[i])
 	{
 		cmd_path = ft_strjoin(paths[i], cmd);
-		if (access(cmd_path, F_OK && X_OK) == 0)
+		if (!access(cmd_path, 0))
 			return (cmd_path);
 		free(cmd_path);
 		i++;
