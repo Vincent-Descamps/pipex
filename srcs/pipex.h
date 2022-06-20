@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 12:22:41 by vdescamp          #+#    #+#             */
-/*   Updated: 2022/06/20 10:53:38 by vdescamp         ###   ########.fr       */
+/*   Updated: 2022/06/20 11:04:31 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <string.h>
+# include <errno.h>
 # include <sys/wait.h>
 # include "../libft/libft.h"
 
