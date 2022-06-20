@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 12:25:02 by vdescamp          #+#    #+#             */
-/*   Updated: 2022/06/16 18:03:01 by vdescamp         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:36:08 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*get_cmd_path(char **paths, char	*cmd)
 		free(cmd_path);
 		i++;
 	}
-	ft_error("**command path unreachable");
+	ft_error("** command not found **");
 	exit(0);
 }
 
