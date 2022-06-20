@@ -6,11 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:20:48 by vdescamp          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/06/17 13:37:28 by vdescamp         ###   ########.fr       */
-=======
-/*   Updated: 2022/06/20 10:20:37 by vdescamp         ###   ########.fr       */
->>>>>>> 7be2f89e67a9cfac5ba1add4da2b055777922356
+/*   Updated: 2022/06/20 13:33:46 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +39,7 @@ void	process_2(char **argv, char **envp, int ends)
 	char	*cmd;
 	char	**options;
 
-<<<<<<< HEAD
 	fd = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 0644);
-=======
-	fd = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC);
->>>>>>> 7be2f89e67a9cfac5ba1add4da2b055777922356
 	if (fd < 0)
 		ft_error("**Error in output file**");
 	dup2(fd, STDOUT_FILENO);
