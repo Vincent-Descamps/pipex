@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:20:48 by vdescamp          #+#    #+#             */
-/*   Updated: 2022/06/16 17:56:27 by vdescamp         ###   ########.fr       */
+/*   Updated: 2022/06/20 10:20:37 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	process_2(char **argv, char **envp, int ends)
 	char	*cmd;
 	char	**options;
 
-	fd = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 00777);
+	fd = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC);
 	if (fd < 0)
 		ft_error("**Error in input file");
 	dup2(fd, STDOUT_FILENO);
