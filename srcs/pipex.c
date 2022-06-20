@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:20:48 by vdescamp          #+#    #+#             */
-/*   Updated: 2022/06/20 13:33:46 by vdescamp         ###   ########.fr       */
+/*   Updated: 2022/06/20 13:44:56 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	pipex(char **argv, char **envp)
 	close(ends[1]);
 	pid2 = fork();
 	if (pid2 == -1)
-		ft_error("**Error in second process**");
+		ft_error("**Error in secondls process**");
 	if (pid2 == 0)
 	{
 		process_2(argv, envp, ends[0]);
