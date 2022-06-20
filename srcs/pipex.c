@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:20:48 by vdescamp          #+#    #+#             */
-/*   Updated: 2022/06/16 17:56:27 by vdescamp         ###   ########.fr       */
+/*   Updated: 2022/06/17 13:37:28 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	process_1(char **argv, char **envp, int ends)
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
-		ft_error("**Error in output file");
+		ft_error("**Error in output file**");
 	dup2(fd, STDIN_FILENO);
 	close(fd);
 	options = ft_split(argv[2], ' ');
@@ -29,7 +29,7 @@ void	process_1(char **argv, char **envp, int ends)
 	path = get_path(cmd, envp);
 	dup2(ends, STDOUT_FILENO);
 	execve(path, options, envp);
-	ft_error("Error in first process");
+	ft_error("**Error in first process**");
 }
 
 void	process_2(char **argv, char **envp, int ends)
@@ -39,9 +39,9 @@ void	process_2(char **argv, char **envp, int ends)
 	char	*cmd;
 	char	**options;
 
-	fd = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 00777);
+	fd = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	if (fd < 0)
-		ft_error("**Error in input file");
+		ft_error("**Error in output file**");
 	dup2(fd, STDOUT_FILENO);
 	close(fd);
 	options = ft_split(argv[3], ' ');
@@ -49,7 +49,7 @@ void	process_2(char **argv, char **envp, int ends)
 	path = get_path(cmd, envp);
 	dup2(ends, STDIN_FILENO);
 	execve(path, options, envp);
-	ft_error("Error in second process");
+	ft_error("**Error in second process**");
 }
 
 int	pipex(char **argv, char **envp)
@@ -68,7 +68,7 @@ int	pipex(char **argv, char **envp)
 	close(ends[1]);
 	pid2 = fork();
 	if (pid2 == -1)
-		ft_error("**Error in first process**");
+		ft_error("**Error in second process**");
 	if (pid2 == 0)
 	{
 		process_2(argv, envp, ends[0]);
