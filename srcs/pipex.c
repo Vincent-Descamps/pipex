@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:20:48 by vdescamp          #+#    #+#             */
-/*   Updated: 2022/06/20 13:44:56 by vdescamp         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:41:15 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	process_2(char **argv, char **envp, int ends)
 	char	*cmd;
 	char	**options;
 
-	fd = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	fd = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 0744);
 	if (fd < 0)
 		ft_error("**Error in output file**");
 	dup2(fd, STDOUT_FILENO);
@@ -57,6 +57,7 @@ int	pipex(char **argv, char **envp)
 	pid_t	pid1;
 	pid_t	pid2;
 	int		ends[2];
+	int		status;
 
 	if (pipe(ends) == -1)
 		return (1);
@@ -75,7 +76,6 @@ int	pipex(char **argv, char **envp)
 	}
 	close(ends[0]);
 	close(ends[1]);
-	waitpid(pid1, NULL, 0);
-	waitpid(pid2, NULL, 0);
+	waitpid(-1, &status, 0);
 	return (0);
 }
